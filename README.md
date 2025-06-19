@@ -1,5 +1,51 @@
 # deep_learning_projs
 Deep Learning Algorithms Practice
+# 1. Linear Regression and DNN model comparison
+
+## Data Used: Aggregate Cancer Mortality Rate Data
+
+These data were aggregated from a number of sources including the American Community Survey (https://www.census.gov), https://www.clinicaltrials.gov, and https://www.cancer.gov.
+
+Significant preprocessing was done on this dataset including removing parameters with missing data, removing values that were obvious outliers, evaluated and minimized skew, and normalization using z-score.
+
+## Model Overview
+The models used in this comparison are Linear Regression, DNN-16, DNN-30-8, DNN-30-16-8, DNN-30-16-8-4 with the following learning rates: 0.1, 0.001, 0.001, 0.0001.
+
+## Usage
+
+Run HW1 Deep Learning Models: tf_dl_hw1
+tf_dl_hw1 runs all of the models needed for Deep Learning HW1.
+
+The model to run (input number of corresponding model):   
+	1:linear regression,  
+	2:DNN-16,  
+	3:DNN-30-8,  
+	4:DNN-30-16-8,  
+	5:DNN-30-16-8-4
+The learning rate has a default value of 0.01.
+The epoch number has a default value of 11.
+
+```python
+
+# runs linear regression model
+py trf_dl_hw1 -f cancer_reg.csv -m 1
+
+# runs DNN-16
+py trf_dl_hw1 -f cancer_reg.csv -m 2
+
+# runs DNN-30-8
+py trf_dl_hw1 -f cancer_reg.csv -m 3
+
+# runs DNN-30-16-8
+py trf_dl_hw1 -f cancer_reg.csv -m 4
+
+# runs DNN-30-16-8-4
+py trf_dl_hw1 -f cancer_reg.csv -m 5
+
+# runs DNN-16 with custom learning rate and epoch number
+py trf_dl_hw1 -f cancer_reg.csv -m 2 -l 0.001 -e 20
+
+```
 
 # 2. Model comparison for MNIST data
    This section compares preformance between DNN, CNN, VGG, and ResNet models in labeling the MNIST dataset.
