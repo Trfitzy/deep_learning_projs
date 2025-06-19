@@ -4,7 +4,7 @@ Deep Learning Algorithms Practice
 # 2. Model comparison for MNIST data
    This section compares preformance between DNN, CNN, VGG, and ResNet models in labeling the MNIST dataset.
 
-## MNIST dataset: 
+## Data Used: MNIST dataset 
 Each data sample has 785 pieces of data. The first column, called ‘label’, is the label of what number is in the image. It ranges from 0 to 9.3 The other 784 columns are individual pixels. They range from 0 to 255, for the grey scale of the image. The column names are ‘pix-(row number)-(column number)’. There is no data missing from this dataset.
 
 The data is split 60/20/20 for training/validation/testing. This data set is fairly clean, so the only pre-processing is normalization of the data using a min-max normalization since this data does not have any outliers. The min and max for the label column will be 0 and 9, respectively. The min and max for the pixel columns will be 0 and 255, respectively.
@@ -43,7 +43,7 @@ py trf_dl_hw3 1
 
  # 3. Medical Image Segmentation
 
- ## Data Used
+ ## Data Used: Retina Blood Vessel Segmentation dataset
 The data set for medical image segmentation consists of 100 retina scan images and masks, 20 test and 80 train images and masks. The masks are the labels for this data set. The goal is to replicate these masks using only the image as the data input. Each image is 512 x 512 x 3. The last dimension shows that there are RGB values for the images. Each mask is 512 x 512 x 1. The last dimension shows that the mask is greyscale. All values in the images and masks are in the range 0 to 255. There is no missing data. The training data will be split 80/20 for training and validation and the data labeled as testing will be used for testing. The images and masks are loaded using PILLOW and are normalized by dividing all values by 255. No other pre-processing is used.
 
 This data set is used for early detection of eye disease by mapping retinal blood vessels using retinal eye scans.
