@@ -36,9 +36,12 @@ The model to run (input number of corresponding model):
 	3:VGG,  
 	4:Resnet
 
- Example: 
+```python
+# runs DNN model
+py trf_dl_hw3 1
+```python
 
- # 3. Mdeical Image Segmentation
+ # 3. Medical Image Segmentation
 
  ## Data Used
 The data set for medical image segmentation consists of 100 retina scan images and masks, 20 test and 80 train images and masks. The masks are the labels for this data set. The goal is to replicate these masks using only the image as the data input. Each image is 512 x 512 x 3. The last dimension shows that there are RGB values for the images. Each mask is 512 x 512 x 1. The last dimension shows that the mask is greyscale. All values in the images and masks are in the range 0 to 255. There is no missing data. The training data will be split 80/20 for training and validation and the data labeled as testing will be used for testing. The images and masks are loaded using PILLOW and are normalized by dividing all values by 255. No other pre-processing is used.
@@ -68,9 +71,4 @@ py trf_dl_hw3 train ./[filepath that contains the Data folder]
 
 # runs testing for all models using saved weights
 py trf_dl_hw3 test ./[filepath that contains the Data folder]
-
-
-
-
-
- 
+```python
