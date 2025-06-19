@@ -39,7 +39,7 @@ The model to run (input number of corresponding model):
 ```python
 # runs DNN model
 py trf_dl_hw3 1
-```python
+```
 
  # 3. Medical Image Segmentation
 
@@ -71,4 +71,4 @@ py trf_dl_hw3 train ./[filepath that contains the Data folder]
 
 # runs testing for all models using saved weights
 py trf_dl_hw3 test ./[filepath that contains the Data folder]
-```python
+```
