@@ -37,4 +37,40 @@ The model to run (input number of corresponding model):
 	4:Resnet
 
  Example: 
+
+ # 3. Mdeical Image Segmentation
+
+ ## Data Used
+The data set for medical image segmentation consists of 100 retina scan images and masks, 20 test and 80 train images and masks. The masks are the labels for this data set. The goal is to replicate these masks using only the image as the data input. Each image is 512 x 512 x 3. The last dimension shows that there are RGB values for the images. Each mask is 512 x 512 x 1. The last dimension shows that the mask is greyscale. All values in the images and masks are in the range 0 to 255. There is no missing data. The training data will be split 80/20 for training and validation and the data labeled as testing will be used for testing. The images and masks are loaded using PILLOW and are normalized by dividing all values by 255. No other pre-processing is used.
+
+This data set is used for early detection of eye disease by mapping retinal blood vessels using retinal eye scans.
+
+## Model Overiew
+
+The U-Net Model is the basis for this assessment. A comparison was done across the following models: U-Net 2 layers, U-Net 3 layers, U-Net 4 layers, U-Net 5 layers. Binary crossentropy was used as the loss function after a comaprison between the following loss functions: Binary Crossentropy, Dice, Cosine-similarity, MSR. Adam was used as the optimizer after a comaprison across the following optimizers: SGD, Adam, RMSprop, Adagrad.
+
+## Usage
+
+Run HW3 Retina Scan with U-model: tf_dl_hw3
+tf_dl_hw3 runs all of the models needed for Deep Learning HW3.
+The model to run (all run for each execution):   
+	U-Net 2 layers,
+	U-Net 3 layers,
+	U-Net 4 layers,
+	U-Net 5 layers,  
+	
+The learning rate has a default value of 0.01.
+The epoch number has a default value of 50.
+
+```python
+# runs training for all models
+py trf_dl_hw3 train ./[filepath that contains the Data folder]
+
+# runs testing for all models using saved weights
+py trf_dl_hw3 test ./[filepath that contains the Data folder]
+
+
+
+
+
  
