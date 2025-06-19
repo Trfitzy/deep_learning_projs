@@ -1,7 +1,7 @@
 # deep_learning_projs
 Deep Learning Algorithms Practice
 
-### 2. Model comparison for MNIST data
+# 2. Model comparison for MNIST data
    This section compares preformance between DNN, CNN, VGG, and ResNet models in labeling the MNIST dataset.
 
 ## MNIST dataset: 
@@ -10,13 +10,13 @@ Each data sample has 785 pieces of data. The first column, called ‘label’, i
 The data is split 60/20/20 for training/validation/testing. This data set is fairly clean, so the only pre-processing is normalization of the data using a min-max normalization since this data does not have any outliers. The min and max for the label column will be 0 and 9, respectively. The min and max for the pixel columns will be 0 and 255, respectively.
 
 ## Model Overviews:
-# DNN Model
+### DNN Model
 The DNN model has six layers. The first layer flattens the two-dimensional image data into a one-dimensional array. The other four layers step the dimensionality of the flattened array (length: 784) down by powers of two using a ReLu activation layer. The final layer steps the dimensionality down to the needed output length of ten and uses a softmax activation to get a probability for multiple classifications. 
 
-# CNN Model
+### CNN Model
 The CNN model has 2 blocks consisting of a convolution layer and max pooling. The final block is flattening and a dense layer to get a one-dimensional array of length ten. ReLu was used as the activation function for the CNN layers. Softmax was used as the final activation in order to ensure that outputs are probabilities for multi-classification. 
 
-# VGG Model
+### VGG Model
 The VGG model is used to classify images of size 224 x 224. It’s made up of VGG blocks, consisting of multiple CNN layers followed by a max-pooling layer. The CNN layers include padding to maintain a consistent shape across the block. VGG-A consists of 5 VGG blocks before switching to 3 dense layers to get the output, 11 weight layers in total. This model has 132,872,194 trainable parameters. The MNIST images are 28 x 28. To accommodate this and to make the model trainable in a reasonable amount of time, the VGG for this report has one fewer VGG blocks and reduces the depth proportionally to the reduced input size, resulting in 418,806 trainable parameters.
 
 ## Optimization
